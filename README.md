@@ -3,8 +3,8 @@ This repository contains notebooks for generating figures in the ArchVelo paper.
 
 ArchVelo is a method for modeling gene regulation and inferring cell trajectories using single-cell simultaneous chromatin accessibility (scATAC-seq) and transcriptomic (scRNA-seq) profiling. ArchVelo represents chromatin accessibility as a set of archetypes---shared regulatory programs---and models their dynamic influence on transcription. As a result, ArchVelo improves inference accuracy compared to previous methods and decomposes the velocity field into components, each potentially corresponding to a specific regulatory program.
 
-In this repository, we demonstrate ArchVelo on 3 different single-cell multi-omic datasets: mouse embryonic brain, human hematopoietic stem cells and CD8 T cells responding to acute and chronic viral infections.
-The notebooks for every dataset are numbered according to their order in the pipeline. The current core structure of every folder after downloading required raw data will be as follows:
+In this repository, we demonstrate ArchVelo on 3 different single-cell multi-omic datasets: mouse embryonic brain, human hematopoietic stem cells and CD8 T cells responding to acute and chronic viral infections. The notebooks for every dataset are numbered according to their order in the pipeline. The current core structure of every folder after downloading required raw data will be as follows:
+
 |--**Dataset_name**
 |&emsp; |-- **data**: raw data that requires preprocessing \
 |&emsp; |-- **processed_data**: processed data to run the notebooks \
