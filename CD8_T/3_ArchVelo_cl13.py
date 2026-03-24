@@ -34,7 +34,7 @@ n_pcs=50
 suff = 'cl13/'
 
 #>>>>> FILL: point to peak annotation
-peak_annotation = pd.read_csv('data/full_LCMV_T_cell_dataset/nearest_genes_to_summits.distances.csv', index_col = [0,1])#.droplevel(0)
+peak_annotation = pd.read_csv('data/nearest_genes_to_summits.distances.csv', index_col = [0,1])#.droplevel(0)
 peak_annotation = peak_annotation.reset_index().set_index('name')
 
 #>>>>> DO NOT CHANGE ANYTHING BELOW
