@@ -1,3 +1,4 @@
+# We apply several RNA velocity methods to the HSC dataset.
 import pandas as pd    
 import TFvelo as TFv
 import anndata as ad
@@ -25,7 +26,9 @@ def data_type_tostr(adata, key):
 def preprocess(args):
     print('----------------------------------preprocess',args.dataset_name,'---------------------------------------------')
     if args.dataset_name == 'multiome_HSC':
+        # processed data, used for filtering cells and metadata
         adata_proc = sc.read_h5ad('../HSC/processed_data/adata_rna.h5ad') 
+        # raw data that will be used
         adata = scv.read('../HSC/data/GSM6403410_3423-MV-2_gex_possorted_bam_ICXFB.loom', cache=True)
         adata.obs.index = [x.split(':')[1][:-1] + '-1' for x in adata.obs_names]
         adata.var_names_make_unique()

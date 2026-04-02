@@ -1,4 +1,4 @@
-# We apply several methods to the mouse embryonic brain dataset.
+# We apply several RNA velocity methods to the mouse embryonic brain dataset.
 import pandas as pd    
 import TFvelo as TFv
 import anndata as ad
@@ -26,7 +26,9 @@ def data_type_tostr(adata, key):
 def preprocess(args):
     print('----------------------------------preprocess',args.dataset_name,'---------------------------------------------')
     if args.dataset_name == 'multiome_mouse_brain':
+        # processed data, used for filtering cells and metadata
         adata_proc = sc.read_h5ad('../Mouse_Brain/processed_data/adata_rna.h5ad') 
+        # raw data that will be used
         adata = scv.read('../Mouse_Brain/data/10X_multiome_mouse_brain.loom', cache=True)
         adata.obs_names = [x.split(':')[1][:-1] + '-1' for x in adata.obs_names]
         adata.var_names_make_unique()
